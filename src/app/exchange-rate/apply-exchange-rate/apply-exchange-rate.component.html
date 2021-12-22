@@ -1,0 +1,65 @@
+<mat-card>
+    <mat-card-title>
+        Aplicar tipo de cambio
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="applyExchangeRateForm" (submit)="applyExchangeRate()">
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Monto</mat-label>
+                <input matInput placeholder="Monto" formControlName='monto'>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Moneda Origen</mat-label>
+                <input matInput placeholder="Moneda Origen" formControlName='monedaOrigen'>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Moneda Destino</mat-label>
+                <input matInput placeholder="Moneda Destino" formControlName='monedaDestino'>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <button mat-raised-button color="primary">Aplicar tipo de cambio</button>
+            </p>
+        </form>
+
+        <br />
+        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="Monto">
+              <th mat-header-cell *matHeaderCellDef> Monto </th>
+              <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Moneda origen">
+              <th mat-header-cell *matHeaderCellDef> Moneda origen </th>
+              <td mat-cell *matCellDef="let element"> {{element.monedaOrigen}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Moneda destino">
+              <th mat-header-cell *matHeaderCellDef> Moneda destino </th>
+              <td mat-cell *matCellDef="let element"> {{element.monedaDestino}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Tipo de cambio">
+              <th mat-header-cell *matHeaderCellDef> Tipo de cambio </th>
+              <td mat-cell *matCellDef="let element"> {{element.tipoCambio}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Monto con tipo de cambio">
+              <th mat-header-cell *matHeaderCellDef> Monto con tipo de cambio </th>
+              <td mat-cell *matCellDef="let element"> {{element.montoConTipoCambio}} </td>
+            </ng-container>          
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-card-content>
+</mat-card>

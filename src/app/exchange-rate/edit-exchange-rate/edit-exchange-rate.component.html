@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>
+        Actualizar tipo de cambio
+    </mat-card-title>
+    <mat-card-content>
+        <div *ngIf="dataLoaded">
+            <form [formGroup]="editExchangeRateForm" (submit)="editExchangeRate()">
+                <p>
+                    <mat-form-field appearance="outline">
+                    <mat-label>Codigo ISO</mat-label>
+                    <input matInput placeholder="codigoIso" formControlName='codigoIso' readonly>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                    <mat-label>Divisa</mat-label>
+                    <input matInput placeholder="Divisa" formControlName='divisa'>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                    <mat-label>Valor</mat-label>
+                    <input matInput placeholder="Valor" formControlName='valor'>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <button mat-raised-button color="primary">Actualizar tipo de cambio</button>
+                </p>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>

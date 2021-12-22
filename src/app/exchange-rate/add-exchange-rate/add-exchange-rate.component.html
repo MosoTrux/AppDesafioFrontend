@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>
+        Agregar tipo de cambio
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="addExchangeRateForm" (submit)="createExchangeRate()">
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Codigo ISO</mat-label>
+                <input matInput placeholder="Codigo ISO" formControlName='codigoIso'>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Divisa</mat-label>
+                <input matInput placeholder="Divisa" formControlName='divisa'>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Valor" formControlName='valor'>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <button mat-raised-button color="primary">Agregar tipo de cambio</button>
+            </p>
+        </form>
+    </mat-card-content>
+</mat-card>
